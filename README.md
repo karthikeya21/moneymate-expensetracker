@@ -21,6 +21,7 @@ moneymate/               ← Root folder of your project
 │  ├─ dbConnect.js       ← MongoDB connection
 │  ├─ passport.js        ← Google OAuth setup
 │  ├─ routes/            ← API routes (usersRoute.js, transactionsRoute.js)
+|  |-models/             ← user and transaction models
 │  |─ package.json       ← Backend dependencies and scripts
 |  |-.env                ← Environment variables (never push this)
 │
@@ -90,6 +91,7 @@ The frontend runs on `http://localhost:3000` and communicates with the backend A
 
 * **Frontend:** React, Ant Design, Axios, Moment.js, Recharts, React Router, Lottie-react
 * **Backend:** Node.js, Express, MongoDB, Mongoose, Passport, JSON Web Tokens (JWT)
+
 
 
 
