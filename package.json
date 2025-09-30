@@ -1,0 +1,11 @@
+{
+  "name": "moneymate-root",
+  "private": true,
+  "scripts": {
+    "server-install": "npm install --prefix server",
+    "client-install": "npm install --prefix client",
+    "build-client": "npm run build --prefix client",
+    "start-server": "npm start --prefix server",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+  }
+}
