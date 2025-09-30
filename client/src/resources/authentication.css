@@ -1,178 +1,173 @@
 /* --- Overall Page Background --- */
-.login-page {
+.login-page,
+.register-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  /*padding: 2rem;   /* less vertical padding */
   box-sizing: border-box;
   background: linear-gradient(135deg, #e0f0ff 0%, #f7faff 100%);
-}
-.register-page{
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /*padding:0.5rem;   /* less vertical padding */
-  box-sizing: border-box;
-  background: linear-gradient(135deg, #e0f0ff 0%, #f7faff 100%);
+  padding: 1rem;
 }
 
 /* --- Unified Container --- */
-.login-container {
-  display: flex;
-  max-width: 1000px;  
-  height: 90%;        /* wider overall */
-  width: 95%;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 24px;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  animation: fadeIn 0.6s ease-out forwards;
-  border: none;
-}
+.login-container,
 .register-container {
   display: flex;
-  max-width: 1000px;  
-  height: 80%;        /* wider overall */
+  flex-direction: row;
+  max-width: 1000px;
   width: 95%;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 24px;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
- /* overflow: hidden;*/
   animation: fadeIn 0.6s ease-out forwards;
   border: none;
 }
 
+.login-container { height: 90%; }
+.register-container { height: 80%; }
+
 /* --- Left side with bigger animation --- */
-.login-lottie-container {
-  flex: 1.4;                  /* give more room to animation */
+.login-lottie-container,
+.register-lottie-container {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
 }
-.register-lottie-container {
-  flex: 1.2;                  /* give more room to animation */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding:0.75rem;
-}
+
+.login-lottie-container { flex: 1.4; }
+.register-lottie-container { flex: 1.2; }
 
 .lottie-animation {
-  width: 95%;                 /* bigger, but still responsive */
- /* max-width: 850px;           /* raised max for large screens */
+  width: 95%;
   height: 95%;
 }
 
-
 /* --- Right side form container --- */
-.login-form-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 4rem;
-}
+.login-form-container,
 .register-form-container {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 3rem;
 }
 
-/* --- Ant Design Card overrides for a nicer form --- */
-.login-card {
-  width: 100%;
-  max-width: 420px;           /* slightly larger card */
-  border-radius: 20px;
-  border: none;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  padding: 1rem;
-  background: #ffffff;
-}
+.login-form-container { padding: 4rem; }
+.register-form-container { padding: 2rem 3rem; }
+
+/* --- Card styling --- */
+.login-card,
 .register-card {
   width: 100%;
-  max-width: 420px;           /* slightly larger card */
+  max-width: 420px;
   border-radius: 20px;
   border: none;
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  padding:0.75rem;
   background: #ffffff;
+  padding: 1rem;
 }
 
-.login-card .card-title {
+.register-card { padding: 0.75rem; }
+
+.card-title {
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.5rem;
   color: #1a1a1a;
 }
-.register-card.card-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #1a1a1a;
-}
 
-/* Form fields spacing & typography */
-.login-card .ant-form-item-label > label {
-  font-weight: 500;
-  color: #333;
-}
-.register-card.ant-form-item-label > label {
+/* Form fields styling */
+.ant-form-item-label > label {
   font-weight: 500;
   color: #333;
 }
 
-.login-card .ant-input,
-.login-card .ant-input-password {
-  border-radius: 10px;
-  padding: 0.7rem 1rem;
-  font-size: 1rem;
-}
-.register-card .ant-input,
-.register-card .ant-input-password {
+.ant-input,
+.ant-input-password {
   border-radius: 10px;
   padding: 0.7rem 1rem;
   font-size: 1rem;
 }
 
 /* Primary button */
-.login-card .ant-btn-primary {
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-.register-card .ant-btn-primary{
+.ant-btn-primary {
   border-radius: 10px;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
 /* Divider text styling */
-.divider {
+.divider,
+.divider-reg {
   text-align: center;
   margin: 1.5rem 0;
   position: relative;
 }
-.divider-reg {
-  text-align: center;
-  margin: 1rem 0;
-  position: relative;
-}
-.divider span,.divider-reg span {
+
+.divider span,
+.divider-reg span {
   background: #fff;
   padding: 0 10px;
   color: #999;
   font-size: 0.9rem;
 }
 
-/* Simple fade-in animation */
+/* --- Simple fade-in animation --- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 992px) {
+  .login-container,
+  .register-container {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .login-lottie-container,
+  .register-lottie-container {
+    display: none; /* hide animation on smaller screens */
+  }
+
+  .login-form-container,
+  .register-form-container {
+    padding: 2rem 1.5rem;
+    width: 100%;
+  }
+
+  .login-card,
+  .register-card {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .login-form-container,
+  .register-form-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .ant-input,
+  .ant-input-password {
+    font-size: 0.95rem;
+  }
+
+  .ant-btn-primary {
+    font-size: 1rem;
+  }
+
+  .divider,
+  .divider-reg {
+    margin: 1rem 0;
+  }
 }
