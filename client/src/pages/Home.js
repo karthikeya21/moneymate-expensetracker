@@ -161,10 +161,36 @@ function Home() {
             </Select>
 
             {/* Upload logic remains the same */}
-            <Upload /* ...props... */ >
-              <Button icon={<UploadOutlined />} />
-            </Upload>
+            
+            <Upload
+  name="file"
+  accept=".xlsx,.xls"
+  showUploadList={false}
+  customRequest={async ({ file, onSuccess, onError }) => { 
+    const formData = new FormData(); 
+    formData.append("file", file); 
+    const user = JSON.parse(localStorage.getItem("moneymate-user")); 
+    try { 
+      await axios.post("/api/transactions/upload-excel", formData, {
+        headers: { 
+          Authorization: `Bearer ${user.token}`,
+          "Content-Type": "multipart/form-data", 
+        }, 
+      }); 
+      message.success("Excel uploaded successfully"); 
+      getTransactions(); // refresh table 
+      onSuccess(); 
+    } catch (err) { 
+      console.error(err); 
+      message.error("Upload failed"); 
+      onError(err); 
+    } 
+  }} 
+>
+  <Button icon={<UploadOutlined />}>Upload Excel</Button>
+</Upload>
 
+                    
             <Button className="primary" onClick={() => setShowAddEditTransactionModal(true)}>Add New</Button>
           </div>
 
