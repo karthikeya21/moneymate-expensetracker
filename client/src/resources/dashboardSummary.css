@@ -1,0 +1,39 @@
+/* Vertical dashboard summary for sidebar */
+
+.dashboard-summary-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary-card {
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.summary-card h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.summary-card p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.income-card {
+  background-color: #e6f7ff;
+  color: #0050b3;
+}
+
+.expense-card {
+  background-color: #fff1f0;
+  color: #a8071a;
+}
+
+.balance-card {
+  background-color: #f6ffed;
+  color: #237804;
+}

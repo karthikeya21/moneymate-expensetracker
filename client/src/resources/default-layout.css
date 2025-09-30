@@ -1,0 +1,97 @@
+.layout {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: #f5f8fb;
+ height: 100vh;
+ width: 100%;
+ overflow: auto;
+}
+
+/* Navbar spans 90% */
+.navbar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 90%;
+ background: #fff;
+ padding: 0.5rem 0.5rem;
+ margin-top: 10px;
+ border-radius: 8px;
+ box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.logo {
+ font-size: 1.5rem;
+font-weight: 700;
+ color: #1890ff;
+ cursor: pointer;
+ margin-left:1rem;
+}
+
+/* Navbar right - toggle + user */
+.navbar-right {
+ display: flex;
+ align-items: center;
+ gap:1rem;
+ margin: 0 1rem;
+}
+
+/* Icons for toggle */
+.active-icon {
+ font-size: 22px;
+ color: #1890ff;
+ cursor: pointer;
+}
+.inactive-icon {
+ font-size: 22px;
+color: #aaa;
+ cursor: pointer;
+}
+
+/* Primary button */
+.primary {
+ background: #1890ff;
+ color: #fff;
+ border: none;
+ padding: 0.35rem 0.9rem;
+ border-radius: 6px;
+ cursor: pointer;
+}
+.primary:hover {
+ background: #40a9ff;
+}
+
+/* Content */
+.content {
+ width: 90%;
+ margin-top:10px;
+ flex: 1; /* take remaining space */
+ overflow-y: auto; /*-- THIS LINE IS REMOVED */
+ padding-bottom: 10px; /* Corrected padding shorthand */
+ /*overflow: hidden; /* Prevent any accidental overflow */
+}
+/* Add these new styles to the end of default-layout.css */
+
+.user-greeting {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0 1rem; /* A dark gray for good readability */
+}
+
+.logout-btn {
+  background: transparent;
+  color: #1890ff; /* Ant Design's primary blue */
+  border: 1px solid #1890ff;
+  padding: 0.35rem 0.9rem;
+  margin-right: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logout-btn:hover {
+  background: #1890ff;
+  color: #fff;
+}

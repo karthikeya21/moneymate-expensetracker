@@ -1,0 +1,154 @@
+.home-layout {
+ display: flex;
+ width: 100%; /* Changed from 90% to fill the content area */
+ margin: 0 auto; /* Keep it centered if needed, though 100% width makes this moot */
+ gap: 20px;
+ height: 100%; /* CRITICAL: Make the layout fill the container */
+}
+
+/* Left Column 15% fixed */
+.left-column {
+ width: 15%;
+ margin-top:1.5rem;
+ /* No position: sticky needed, it will be fixed by the layout */
+}
+
+/* Middle Column 65% scrollable */
+.middle-column {
+  margin-top: 1rem;
+ width: 65%;
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
+ padding: 0 10px;
+}
+
+/* Top Bar single line */
+.top-bar {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ flex-wrap: wrap; /* ensure no overflow */
+}
+
+/* Scrollable table/analytics */
+.table-scroll {
+ flex: 1; /* CRITICAL: This makes the container take all available vertical space */
+ overflow-y: auto; /* Allow this container to scroll */
+ padding-right: 10px; /* spacing from scrollbar */
+}
+
+/* Right Column 20% fixed */
+.right-column {
+ width: 20%;
+ margin-top:0.75rem;
+ overflow-y: auto; /* CRITICAL: Allows this column to scroll independently */
+ padding-left: 10px;
+}
+
+/* Cards inside middle column */
+.middle-column .ant-card {
+ margin-bottom: 15px;
+}
+
+/* Buttons */
+.primary {
+ background: #1890ff;
+ color: #fff;
+ border: none;
+ padding: 0.4rem 0.8rem;
+ border-radius: 6px;
+ cursor: pointer;
+}
+.primary:hover {
+ background: #40a9ff;
+}
+
+/* Responsive */
+@media (max-width: 1280px) {
+ .home-layout {
+ flex-direction: column;
+ width: 95%;
+ height: auto; /* Revert to auto height on smaller screens */
+ }
+.left-column,
+ .middle-column,
+ .right-column {
+ width: 100%;
+ position: relative;
+ height: auto;
+ }
+ .table-scroll {
+ max-height: none;
+ overflow-y: visible; /* Disable scroll on small screens, let page scroll */
+ }
+ .right-column {
+ overflow-y: visible;
+ }
+}
+/* ================================== */
+/* === Elegant Table Design Styles === */
+/* ================================== */
+
+/* 1. Card Container Styling */
+.transactions-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.transactions-card .ant-card-head {
+  border-bottom: 1px solid #f0f0f0; /* Lighter border for the title */
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.transactions-card .ant-card-body {
+  padding: 0; /* Remove card body padding to let the table fill it */
+}
+
+
+/* 2. Table Header Styling */
+.transactions-card .ant-table-thead > tr > th {
+  background-color: #f9fafb; /* A very light, neutral gray */
+  color: #555;
+  font-weight: 600;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 12px 16px; /* Adjust padding */
+}
+
+
+/* 3. Table Row & Cell Styling */
+.transactions-card .ant-table-tbody > tr > td {
+  padding: 12px 16px; /* Match header padding for alignment */
+  border-bottom: 1px solid #f0f0f0; /* Lighter horizontal lines */
+  vertical-align: middle;
+}
+
+/* Zebra Striping for Readability */
+.transactions-card .ant-table-tbody > tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+
+/* 4. Interactivity & UX */
+
+/* Row Hover Effect */
+.transactions-card .ant-table-tbody > tr:hover {
+  background-color: #e6f7ff; /* A light blue hover effect from Ant Design's palette */
+}
+
+/* Actions Column Icons */
+.ant-table-cell .anticon {
+  font-size: 18px; /* Make icons slightly larger */
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ant-table-cell .anticon-edit:hover {
+  color: #1890ff; /* Blue for edit */
+}
+
+.ant-table-cell .anticon-delete:hover {
+  color: #ff4d4f; /* Red for delete */
+}

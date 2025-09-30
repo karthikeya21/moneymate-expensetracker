@@ -1,0 +1,70 @@
+.insights-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  background: #f7f9fc;
+  border-radius: 12px;
+}
+
+.insights-panel h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #2b2d42;
+}
+
+.insight-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background: #fff;
+}
+
+/* Scrollable container inside each card */
+.insight-scroll {
+  max-height: 180px; /* adjust as needed */
+  overflow-y: auto;
+  padding-right: 6px; /* space from scrollbar */
+}
+
+.insight-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.insight-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.insight-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.insight-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.insight-item:last-child {
+  border-bottom: none;
+}
+
+.insight-item span:first-child {
+  font-weight: 500;
+}
+
+.insight-item span:last-child {
+  font-weight: 600;
+  color: #1890ff;
+}
+
+.insight-item p {
+  margin: 0;
+  font-weight: 500;
+  color: #faad14;
+}

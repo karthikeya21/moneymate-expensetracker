@@ -1,0 +1,95 @@
+/* --- Main Layout --- */
+.analytics-container {
+  padding: 24px;
+  background-color: #f0f2f5;
+}
+
+.analytics-summary-row, .analytics-category-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* --- Summary Card Styles --- */
+.analytics-summary-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.analytics-summary-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 16px;
+}
+
+.analytics-summary-stats h5 {
+  font-size: 1rem;
+  color: #4a5568;
+  margin: 4px 0;
+}
+
+.analytics-summary-progress {
+  margin-top: auto; /* Pushes the progress circles to the bottom */
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* --- Category Analysis Card Styles --- */
+.analytics-category-analysis-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.analytics-category-analysis-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.analytics-category-item {
+  margin-bottom: 20px;
+}
+
+.analytics-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.analytics-category-header h5 {
+  margin: 0;
+  font-size: 1rem;
+  color: #2d3748;
+}
+
+.analytics-category-header span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+/* Ant Design Progress bar customization, scoped to this container */
+.analytics-container .ant-progress-text {
+  font-size: 1em !important;
+}
+/* Add this to your analatics.css file */
+
+.analytics-chart-container {
+  height: 350px; /* Give the chart a fixed height */
+  padding-top: 20px;
+}
