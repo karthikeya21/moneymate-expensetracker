@@ -29,6 +29,7 @@
     "jsonwebtoken": "^9.0.2",
     "lottie-react": "^2.4.1",
     "moment": "^2.29.3",
+    "moneymate-root": "file:..",
     "mongoose": "^6.3.1",
     "multer": "^2.0.2",
     "nodemon": "^2.0.16",
